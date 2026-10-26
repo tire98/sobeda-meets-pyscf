@@ -1,0 +1,81 @@
+Number of fragments: 2
+
+Charge and spin multiplicity of fragment 1: 0 1
+Indices of atoms in fragment 1: 1-3
+Generating Gaussian input file of fragment 1 via Multiwfn (fragment1.gjf)
+Running: g16 < fragment1.gjf &> fragment1.out
+Finished successfully!
+Running: formchk fragment1.chk fragment1.fch
+Energy components of fragment 1:
+E_tot = -76.4601611073 Hartree
+E_T = 76.200035 Hartree
+E_els = -143.3311162988 Hartree
+E_x = -8.890311 Hartree
+E_c = -0.438195 Hartree
+E_disp = -0.0005738085 Hartree
+
+Charge and spin multiplicity of fragment 2: 0 1
+Indices of atoms in fragment 2: 4-7
+Generating Gaussian input file of fragment 2 via Multiwfn (fragment2.gjf)
+Running: g16 < fragment2.gjf &> fragment2.out
+Finished successfully!
+Running: formchk fragment2.chk fragment2.fch
+Energy components of fragment 2:
+E_tot = -56.5856821849 Hartree
+E_T = 56.347066 Hartree
+E_els = -104.9007520116 Hartree
+E_x = -7.617945 Hartree
+E_c = -0.412832 Hartree
+E_disp = -0.0012191733 Hartree
+
+Note: Calculation of whole system will be conducted in unrestricted way
+
+Generating fch file of promolecular state via Multiwfn (promol.fch)
+Running: unfchk promol.fch promol.chk
+Generating Gaussian input file of promolecular state via Multiwfn (promol.gjf)
+Running: g16 < promol.gjf &> promol.out
+Finished successfully!
+Energy components of promolecular state:
+E_tot = -133.081035773 Hartree
+E_T = 132.547101 Hartree
+E_els = -248.2512237102 Hartree
+E_x = -16.518460 Hartree
+E_c = -0.855333 Hartree
+E_disp = -0.0031200628 Hartree
+
+Generating Gaussian input file of final state (final.gjf)
+Running: g16 < final.gjf &> final.out
+Finished successfully!
+Energy components of final state:
+E_tot = -133.057289318 Hartree
+E_T = 132.585629 Hartree
+E_els = -248.2614372552 Hartree
+E_x = -16.522607 Hartree
+E_c = -0.855754 Hartree
+E_disp = -0.0031200628 Hartree
+Frozen state energy: -133.048710791420 Hartree
+
+*************************
+***** Final results *****
+*************************
+
+Total interaction energy:     -7.18 kcal/mol
+
+Physical components of interaction energy derived by sobEDA:
+Electrostatic (E_els):    -12.15 kcal/mol
+Exchange (E_x):     -6.40 kcal/mol
+Pauli repulsion (E_rep):     20.28 kcal/mol
+Exchange-repulsion (E_xrep = E_x + E_rep):     13.88 kcal/mol
+Orbital (E_orb):     -5.38 kcal/mol
+DFT correlation (E_DFTc):     -2.70 kcal/mol
+Dispersion correction (E_dc):     -0.83 kcal/mol
+Coulomb correlation (E_c = E_DFTc + E_dc):     -3.53 kcal/mol
+
+Variant of sobEDA for weak interaction (sobEDAw):
+Note:   96.26% DFT correlation is combined with dispersion correction to yield a SAPT-like dispersion term
+Electrostatic (E_els):    -12.15 kcal/mol
+Exchange-repulsion (including scaled DFT correlation):     13.78 kcal/mol
+Orbital (E_orb):     -5.38 kcal/mol
+Dispersion (E_disp):     -3.43 kcal/mol
+
+Please do not forget to cite original paper of Multiwfn program and sobEDA method in your work!

@@ -1,0 +1,32 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "sobeda-meets-pyscf"
+version = "0.1.0"
+description = "sobEDA/sobEDAw energy decomposition analysis with PySCF"
+readme = "README.md"
+requires-python = ">=3.9"
+dependencies = [
+    "numpy",
+    "pyscf>=2.14",
+    "pyscf-dispersion",
+]
+
+[project.optional-dependencies]
+gpu = ["gpu4pyscf-cuda12x"]
+bse = ["basis-set-exchange"]
+test = ["pytest"]
+
+[project.scripts]
+sobeda = "sobeda:main"
+
+[project.urls]
+Repository = "https://github.com/tire98/sobeda-meets-pyscf"
+
+[tool.setuptools]
+py-modules = ["sobeda"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]

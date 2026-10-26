@@ -218,3 +218,13 @@ __marimo__/
 
 # Streamlit
 .streamlit/secrets.toml
+
+# sobeda.py outputs
+output*/
+*.chk
+*.cube
+*.molden
+*.pyscf_out
+
+# NFS placeholders for deleted-but-open files
+.nfs*

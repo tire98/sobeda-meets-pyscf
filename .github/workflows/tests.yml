@@ -1,0 +1,31 @@
+name: Tests
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  tests:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 20
+    env:
+      PYTHONNOUSERSITE: "1"
+      OMP_NUM_THREADS: "2"
+      OPENBLAS_NUM_THREADS: "1"
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-python@v7
+        with:
+          python-version: "3.11"
+          cache: pip
+          cache-dependency-path: pyproject.toml
+      - name: Install package and test dependencies
+        run: python -m pip install '.[test]'
+      - name: Check installed command
+        run: sobeda --help
+      - name: Run tests
+        run: python -m pytest -q
